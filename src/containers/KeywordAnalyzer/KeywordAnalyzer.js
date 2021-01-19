@@ -67,6 +67,11 @@ function KeywordAnalyzer() {
     setRightTextArea(updatedRightTextArea);
   };
 
+  window.gtag('config', process.env.REACT_APP_FIREBASE_MEASUREMENT_ID, {
+    page_title: document.title,
+    page_path: window.location.pathname + window.location.search,
+  });
+
   return (
     <div className={classes.KeywordAnalyzer}>
       <h1>Keyword Analyzer</h1>
