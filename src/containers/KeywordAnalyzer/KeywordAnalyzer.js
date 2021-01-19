@@ -79,7 +79,7 @@ function KeywordAnalyzer() {
         <div className={classes.TextAreas}>
           <TextArea
             className={classes.TextArea}
-            placeholder="Enter your text here"
+            placeholder="Enter your first text here"
             value={leftTextArea}
             changed={(event) => leftTextAreaChangedHandler(event)}
             rows={25}
@@ -97,32 +97,30 @@ function KeywordAnalyzer() {
         <Button>Analyze Keywords</Button>
       </form>
       {rightResults && leftResults ? (
-        <div style={{ display: 'flex', width: '100%' }}>
-          <div style={{ width: '50%' }}>
-            <h3>Left Text Keywords</h3>
+        <div className={classes.KeywordsContainer}>
+          <div className={classes.KeywordContainerHalf}>
+            <h3>First Text Keywords</h3>
             {leftResults.map((word, index) => {
               return (
-                <span
-                  key={word + index}
-                  style={{ padding: '5px', display: 'flex' }}
-                >
-                  {`Keyword #${index + 1}:`}
-                  <strong style={{ paddingLeft: '5px' }}>{word[0]}</strong>
+                <span key={word + index} className={classes.KeywordSpan}>
+                  <span className={classes.KeywordPreface}>
+                    {`Keyword #${index + 1}:`}
+                  </span>
+                  <strong className={classes.Keyword}>{word[0]}</strong>
                   {`, ${word[1]} ${word[0].length > 1 ? 'times' : 'time'}`}
                 </span>
               );
             })}
           </div>
-          <div style={{ width: '50%' }}>
-            <h3>Right Text Keywords</h3>
+          <div className={classes.KeywordContainerHalf}>
+            <h3>Second Text Keywords</h3>
             {rightResults.map((word, index) => {
               return (
-                <span
-                  key={word + index}
-                  style={{ padding: '5px', display: 'flex' }}
-                >
-                  {`Keyword #${index + 1}:`}
-                  <strong style={{ paddingLeft: '5px' }}>{word[0]}</strong>
+                <span key={word + index} className={classes.KeywordSpan}>
+                  <span className={classes.KeywordPreface}>
+                    {`Keyword #${index + 1}:`}{' '}
+                  </span>
+                  <strong className={classes.Keyword}>{word[0]}</strong>
                   {`, ${word[1]} ${word[0].length > 1 ? 'times' : 'time'}`}
                 </span>
               );

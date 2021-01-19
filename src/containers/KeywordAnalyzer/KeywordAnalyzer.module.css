@@ -10,3 +10,33 @@
 .TextAreas {
   display: flex;
 }
+
+.KeywordsContainer {
+  display: flex;
+  width: 100%;
+}
+
+.KeywordContainerHalf {
+  width: 50%;
+}
+
+.KeywordSpan {
+  padding: 5px;
+  display: flex;
+}
+
+.Keyword {
+  padding-left: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .TextAreas {
+    flex-direction: column;
+  }
+  .KeywordContainerHalf {
+    width: 50%;
+  }
+  .KeywordPreface {
+    display: none;
+  }
+}

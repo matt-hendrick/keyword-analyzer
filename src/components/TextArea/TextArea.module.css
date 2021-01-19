@@ -24,3 +24,13 @@
   outline: none;
   background-color: #ccc;
 }
+
+@media only screen and (max-width: 600px) {
+  .TextArea {
+    width: 100%;
+    height: 38vh;
+  }
+  .TextArea:first-of-type {
+    margin-bottom: 10px;
+  }
+}
